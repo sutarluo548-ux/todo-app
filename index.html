@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Daily tasks</title>
+<title>我的待办清单</title>
 <style>
 *{box-sizing:border-box}body{margin:0;min-height:100vh;padding:48px 18px;font:16px/1.5 system-ui,sans-serif;color:#20283d;background:linear-gradient(135deg,#edf3ff,#f8efff);display:grid;place-items:start center}.card{width:min(100%,520px);padding:32px;background:#ffffffd9;border:1px solid #fff;border-radius:24px;box-shadow:0 20px 60px #39456b1a}h1{margin:0 0 5px;font-size:30px;letter-spacing:-1px}.sub{margin:0 0 24px;color:#7a8297}.entry{display:flex;gap:10px}.entry input{min-width:0;flex:1;padding:13px 15px;border:1px solid #dfe4f0;border-radius:12px;font:inherit;outline:none}.entry input:focus{border-color:#7885f5;box-shadow:0 0 0 3px #7885f526}button{border:0;border-radius:12px;padding:0 18px;background:#6674e8;color:white;font:600 15px inherit;cursor:pointer;transition:transform .2s,background .2s}button:hover{background:#5362d5;transform:translateY(-1px)}ul{list-style:none;padding:0;margin:20px 0 0}.task{display:flex;align-items:center;gap:12px;overflow:hidden;padding:13px 10px;border-bottom:1px solid #edf0f6;animation:arrive .32s ease both;transition:opacity .25s,transform .25s,max-height .3s,padding .3s,margin .3s;max-height:90px}.task.removing{opacity:0;transform:translateX(18px);max-height:0;padding-top:0;padding-bottom:0;border:0}.task input{accent-color:#6674e8;width:18px;height:18px;flex:none}.label{flex:1;overflow-wrap:anywhere;position:relative}.done .label{color:#9ba2b2}.done .label:after{content:"";position:absolute;left:0;top:50%;height:1.5px;background:#8d95a8;width:0;animation:strike .25s ease forwards}.del{padding:5px 10px;background:transparent;color:#9299aa;font-size:20px}.del:hover{background:#fff0f1;color:#df5e70}#empty{text-align:center;color:#969db0;padding:24px 0}@keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes strike{to{width:100%}}@media(max-width:420px){body{padding:20px 12px}.card{padding:24px 18px}.entry{gap:7px}.entry button{padding:0 13px}}
 #filters{display:flex;gap:8px;margin-top:12px}#filters button{padding:7px 12px;background:transparent;color:#778099}#filters button[aria-pressed=true]{background:#6674e8;color:white}
 </style>
 </head>
 <body>
-<main class="card"><h1>Daily tasks</h1><p class="sub">A little progress, one task at a time.</p>
+<main class="card"><h1>我的待办清单</h1><p class="sub">一步一步来，每天进步一点。</p>
 <form class="entry" id="form"><input id="input" placeholder="What needs doing?" autocomplete="off" aria-label="New task"><button>Add task</button></form>
 <div id="filters" aria-label="Filter tasks"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="active" aria-pressed="false">Active</button><button type="button" data-filter="completed" aria-pressed="false">Completed</button></div>
 <ul id="list"></ul><div id="empty">You're all caught up ✨</div></main>
