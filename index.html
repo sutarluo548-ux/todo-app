@@ -81,7 +81,14 @@ function renderTpl(){
     const li=document.createElement("li");
     const sp=document.createElement("span");sp.textContent=text;
     const btn=document.createElement("button");btn.className="tplDel";btn.type="button";btn.textContent="×";btn.setAttribute("aria-label","移除 "+text);
-    btn.onclick=()=>{templates.splice(i,1);saveTpl();renderTpl();};
+    btn.onclick=()=>{
+      const removed=templates.splice(i,1)[0];
+      saveTpl();
+      // 今天已生成的那条保留（不删数据），但去掉「每日」标记，因为模板里已经没有它了
+      const arr=db[TODAY]||[];
+      arr.forEach(t=>{if(t.text===removed)delete t.tpl;});
+      save();renderTpl();render();
+    };
     li.append(sp,btn);tplList.append(li);
   });
 }
